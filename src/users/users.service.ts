@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { randomUUID } from 'crypto';
 import { CreateUserDTO } from './DTO/create-user.dto';
 import { UpdateUserDTO } from './DTO/update-user.dto';
-import { UserRepository, User } from './users.repository';
+import { UserRepository } from './users.repository';
+import { User } from './user.interface';
 
 @Injectable()
 export class UsersService {

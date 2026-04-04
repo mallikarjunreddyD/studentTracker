@@ -1,13 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Role } from 'src/common/enums/role.enum';
 import { randomUUID } from 'crypto';
-
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-  role: Role;
-}
+import { User } from './user.interface';
 
 @Injectable()
 export class UserRepository {

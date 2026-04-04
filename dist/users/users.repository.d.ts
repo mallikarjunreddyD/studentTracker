@@ -1,10 +1,4 @@
-import { Role } from 'src/common/enums/role.enum';
-export interface User {
-    id: string;
-    name: string;
-    email: string;
-    role: Role;
-}
+import { User } from './user.interface';
 export declare class UserRepository {
     private users;
     findAll(): User[];

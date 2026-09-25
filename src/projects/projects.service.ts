@@ -22,7 +22,6 @@ export class ProjectsService {
     if (!faculty || faculty.role != 'FACULTY') {
       throw new Error('invalid faculty');
     }
-
     let duration = 1;
     if (projectType === ProjectType.HONORS) duration = 4;
     if (projectType === ProjectType.BTP) duration = 2;
@@ -31,6 +30,7 @@ export class ProjectsService {
     const semesterEnd = semesterStart + duration - 1;
 
     this.eligibilityService.validate(studentIds, projectType);
+    
     const project = this.projectRepository.createProject({
       projectType,
       facultyId,

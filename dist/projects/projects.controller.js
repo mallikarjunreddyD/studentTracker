@@ -17,6 +17,8 @@ const common_1 = require("@nestjs/common");
 const projects_service_1 = require("./projects.service");
 const register_project_dto_1 = require("./DTO/register-project.dto");
 const add_meeting_dto_1 = require("./DTO/add-meeting.dto");
+const roles_decorator_1 = require("../common/decorators/roles.decorator");
+const role_enum_1 = require("../common/enums/role.enum");
 let ProjectsController = class ProjectsController {
     projectsService;
     constructor(projectsService) {
@@ -40,6 +42,7 @@ let ProjectsController = class ProjectsController {
 };
 exports.ProjectsController = ProjectsController;
 __decorate([
+    (0, roles_decorator_1.Roles)(role_enum_1.Role.FACULTY),
     (0, common_1.Post)('register'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -62,6 +65,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ProjectsController.prototype, "getProjectById", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(role_enum_1.Role.FACULTY),
     (0, common_1.Post)(':id/meetings'),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
